@@ -1,0 +1,162 @@
+\documentclass[ngerman]{scrartcl}
+%zeigt alle verwendeten Pakete
+%\listfiles
+\usepackage[pdfborder={0 0 0}]{hyperref}
+\usepackage{marvosym}
+\usepackage[ngerman]{babel}
+\usepackage{makecell}
+\usepackage{geometry} % Erweiterte pdf Einstellungen
+\geometry{verbose,a4paper,tmargin=10mm,bmargin=10mm,lmargin=15mm,rmargin=15mm} % Einstellungen für das pdf-Dokument
+\usepackage{tabularx} % Erweiterte Tabellen
+\usepackage{eurosym} % € Zeichen
+\usepackage{pst-barcode}
+\usepackage[locale=DE]{siunitx}  % Maßeinheiten, Voreinstellung für DE
+\usepackage{multirow}
+\usepackage{xltxtra}
+\usepackage{array}
+\pagestyle{empty}%
+\setmainfont[Mapping=tex-text]{Arial}
+%Voreinstellungen für die \fbox (Setzt die icons in die Boxen "statischen Informationen")
+\setlength\fboxsep{0pt}
+\setlength\fboxrule{0.2mm}
+%
+%header envinroment
+\newcommand\header[1]{%
+	  \fbox{\begin{minipage}[c][2.2cm][l]{509pt}#1\hfill\end{minipage}}\vspace{10pt}}%
+%vehicle envinroment
+\newlength\cardheight
+\newlength\cardwidth
+\setlength\cardheight{0.25\textheight}
+\setlength\cardwidth{.4\textwidth}
+
+%info envinroment
+\newcommand\info[1]{%
+	  \fboxsep3mm\fbox{\begin{minipage}[t][5.5cm][t]{17.3cm}\raggedright \scriptsize #1\end{minipage}}\hfill\fboxsep0mm}%
+%
+%cut line command
+\newcommand{\cutline}{\vspace{0mm} \tabularnewline \raisebox{-0.15\baselineskip}{{\huge\Rightscissors}}\dotfill \vspace{1mm}  \newline }
+%
+% Voreinstellung für fettgedruckten Text engerer Schriftbreite (\textBF)
+\newsavebox\CBox
+\def\textBF#1{\sbox\CBox{#1}\resizebox{\wd\CBox}{\ht\CBox}{\textbf{#1}}}
+\parindent=0pt
+%
+% config with fixed colums size
+\newcolumntype{L}[1]{>{\raggedright\let\newline \newline \arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline \newline \arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline \newline \arraybackslash\hspace{0pt}}m{#1}}
+%
+%
+%Hier beginnt das Dokument
+\begin{document} %
+\centering
+%%
+%HEADER
+\fbox{\begin{minipage}[c][2.2cm][l]{509pt}%
+	 	\setlength\extrarowheight{8pt}
+	 	\vspace{5pt}\begin{tabular}{C{3.3cm}L{13cm}}
+			\multirow{2}{*}{\includegraphics[scale=0.30]{pythoncamp_logo.png}}&%
+			\large{PythonCamp 2022} \tabularnewline \vspace{10pt}
+			& \huge{Eticket Demoseite} \tabularnewline
+			\end{tabular}%
+\hfill\end{minipage}}\hspace{14pt}
+\vspace{10pt}%
+\newline%
+%NEUES TICKET
+%
+\fbox{
+\begin{picture}(17.65cm, 5.2cm)
+\put(0.2cm, 2.0cm){\begin{pspicture}(1.0in, 1.2in) %
+\psbarcode{5024086010185}{height=1 width=1}{qrcode} %
+\end{pspicture}}
+\put(0.2cm, 1.0cm){\small 5024086010185}
+\put(13.5cm, 2.0cm){\includegraphics[scale=.4]{pythoncamp_logo.png}}
+\put(3.2cm, 4.1cm){\LARGE \textbf{Pythoncamp 2022 Virtuell}}
+\put(3.2cm, 3.4cm){\LARGE \textbf{Erwachsene (2 Tage)}}
+\put(3.2cm, 2.4cm){\normalsize \textbf{Beginn:}}
+\put(3.2cm, 2.0cm){\tiny \textbf{(nur gültig am)}}
+\put(5.2cm, 2.4cm){\large \textbf{04.06.2022}}
+\put(3.2cm, 1.4cm){\normalsize \textbf{Ende:}}
+\put(3.2cm, 1.0cm){\tiny \textbf{(2 Tage gültig)}}
+\put(5.2cm, 1.4cm){\large \textbf{05.06.2022}}
+\put(13.2cm, 1.4cm){\normalsize \textbf{Preis}}
+\put(14.7cm, 1.4cm){\normalsize \textbf{EUR}}
+\put(15.7cm, 1.4cm){\normalsize \textbf{0,00}}
+\put(13.2cm, 1.0cm){\tiny \textbf{inkl. 7\% MwSt.}}
+\put(14.7cm, 1.0cm){\small \textbf{EUR}}
+\put(15.7cm, 1.0cm){\small \textbf{0,00}}
+\end{picture}
+}%
+%
+\cutline%
+
+%NEUES TICKET
+%
+\fbox{
+\begin{picture}(17.65cm, 5.2cm)
+\put(0.2cm, 2.0cm){\begin{pspicture}(1.0in, 1.2in) %
+\psbarcode{5024086010185}{height=1 width=1}{qrcode} %
+\end{pspicture}}
+\put(0.2cm, 1.0cm){\small 5024086010185}
+\put(13.5cm, 2.0cm){\includegraphics[scale=.4]{pythoncamp_logo.png}}
+\put(3.2cm, 4.1cm){\LARGE \textbf{Pythoncamp 2022 Virtuell}}
+\put(3.2cm, 3.4cm){\LARGE \textbf{Erwachsene (2 Tage)}}
+\put(3.2cm, 2.4cm){\normalsize \textbf{Beginn:}}
+\put(3.2cm, 2.0cm){\tiny \textbf{(nur gültig am)}}
+\put(5.2cm, 2.4cm){\large \textbf{04.06.2022}}
+\put(3.2cm, 1.4cm){\normalsize \textbf{Ende:}}
+\put(3.2cm, 1.0cm){\tiny \textbf{(2 Tage gültig)}}
+\put(5.2cm, 1.4cm){\large \textbf{05.06.2022}}
+\put(13.2cm, 1.4cm){\normalsize \textbf{Preis}}
+\put(14.7cm, 1.4cm){\normalsize \textbf{EUR}}
+\put(15.7cm, 1.4cm){\normalsize \textbf{0,00}}
+\put(13.2cm, 1.0cm){\tiny \textbf{inkl. 7\% MwSt.}}
+\put(14.7cm, 1.0cm){\small \textbf{EUR}}
+\put(15.7cm, 1.0cm){\small \textbf{0,00}}
+\end{picture}
+}%
+%
+\cutline%
+
+%NEUES TICKET
+%
+\fbox{
+\begin{picture}(17.65cm, 5.2cm)
+\put(0.2cm, 2.0cm){\begin{pspicture}(1.0in, 1.2in) %
+\psbarcode{5024086010185}{height=1 width=1}{qrcode} %
+\end{pspicture}}
+\put(0.2cm, 1.0cm){\small 5024086010185}
+\put(13.5cm, 2.0cm){\includegraphics[scale=.4]{pythoncamp_logo.png}}
+\put(3.2cm, 4.1cm){\LARGE \textbf{Pythoncamp 2022 Virtuell}}
+\put(3.2cm, 3.4cm){\LARGE \textbf{Erwachsene (Beide Tage)}}
+\put(3.2cm, 2.4cm){\normalsize \textbf{Beginn:}}
+\put(3.2cm, 2.0cm){\tiny \textbf{(nur gültig am)}}
+\put(5.2cm, 2.4cm){\large \textbf{04.06.2022}}
+\put(3.2cm, 1.4cm){\normalsize \textbf{Ende:}}
+\put(3.2cm, 1.0cm){\tiny \textbf{(2 Tage gültig)}}
+\put(5.2cm, 1.4cm){\large \textbf{05.06.2022}}
+\put(13.2cm, 1.4cm){\normalsize \textbf{Preis}}
+\put(14.7cm, 1.4cm){\normalsize \textbf{EUR}}
+\put(15.7cm, 1.4cm){\normalsize \textbf{0,00}}
+\put(13.2cm, 1.0cm){\tiny \textbf{inkl. 7\% MwSt.}}
+\put(14.7cm, 1.0cm){\small \textbf{EUR}}
+\put(15.7cm, 1.0cm){\small \textbf{0,00}}
+\end{picture}
+}%
+%
+\cutline%
+
+\info{
+Hinweise:\linebreak
+Das 13. Camp startet am Samstag, den 4. Juni von 11:00 – 18:30 Uhr. Abhängig von den Beiträgen können wir das event zur selben Zeit am Sonntag wiederholen. Via Videokonferenz werden parallel 45-minütige Sessions in virtuellen Räumen stattfinden. Wir beginnen das Camp mit einer Begrüßung und wickeln den Tag mit einer gemeinsamen Abschlussrunde ab. Um unser virtuelles Barcamp möglichst erfolgreich und inspirierend zu gestalten, bitten wir Euch schon jetzt Themenvorschläge über das Campertool einzureichen. Somit können wir schnellstmöglich mit der Tagesplanung loslegen. Ebenso wichtig für die Organisation: Solltest Du grundsätzlich nicht teilnehmen, melde Dich bitte entsprechend von der Veranstaltung ab. Das wäre für uns hilfreich!
+\linebreak\linebreak
+Das PythonCologneCamp wird von uns allen besonders für das Netzwerken und den persönlichen Austausch geschätzt und auch wir bedauern, dies aktuell nicht anbieten zu können. Gleichzeitig können wir die ursprünglich begrenzte Teilnehmerzahl erhöhen.  Wir drücken die Daumen und hoffen zu einem späteren Zeitpunkt im Jahr bei der GFU Cyrus ein Camp veranstalten zu können.
+\linebreak\linebreak
+Wir wünschen Ihnen einen angenehmen Aufenthalt bei uns.\linebreak
+\linebreak
+Das Team vom Pythoncamp
+\linebreak
+\linebreak
+
+}
+\end{document}
